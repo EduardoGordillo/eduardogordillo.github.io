@@ -1,173 +1,128 @@
-.container__slider {
+/* src/css/projects.css */
 
-    height: calc(100vh - 60px);
-    width: 100%;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: calc(10vh -60px) calc(90vh - 60px);
-
+:root {
+    --primary-color: #2563eb; /* Azul profesional */
+    --bg-card: #ffffff;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --accent-color: #f3f4f6;
 }
-.menu__slider {
-    grid-row: 1/2;
-    grid-column: 1/1;
-    
-    z-index: 1;
+
+.projects-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projects-title {
     text-align: center;
-
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--text-main);
 }
 
-.slider {
-    grid-row: 2/2;
-    grid-column: 1/1;
-    position: absolute;
-    width: 100%;
-    
-
+/* Contenedor del Carrusel */
+.carousel-container {
+    overflow: hidden; /* Oculta las tarjetas que no están en foco */
+    position: relative;
+    padding: 20px 0;
 }
 
-
-.slider .lista__slider {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-    width: 90%;
-    height: 80%;
-    transition: opacity .5s;
-    background: #fff;
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
 }
 
-.slider .lista__slider {
-    width: 100%;
-
+/* Estilo de las Cards */
+.project-card {
+    min-width: 350px; /* Tamaño fijo para que el carrusel funcione bien */
+    height: 450px;
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e5e7eb;
+    transition: transform 0.3s ease;
 }
 
-.slider .lista__slider:first-child {
-    opacity: 1;
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
 }
 
-.slider .lista__slider:target {
-    opacity: 1;
+.project-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+    color: var(--text-main);
 }
 
-
-
-.titulo__slider {
-    text-shadow: 1px 1px 10px #fefefe;
-    color: #fefefe;
-    font-weight: 300;
-    font-size: 1.8rem;
-    font-family: 'Montserrat', sans-serif;
-    justify-content: stretch;
-}
-.texto__slider{
-     color:#fefefe;
-     text-transform: capitalize;
+.project-card p {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.6;
 }
 
-
-.item__menu-slide {
-    display: inline-block;
-    text-align: center;
+/* Sección de Herramientas (Badges) */
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: auto;
 }
 
-.item__menu-slide .button__menu-slide {
-    display: inline-block;
-    padding-right: .5rem;
-    width: 19px;
-    height: 15px;
-
+.tag {
+    background: var(--accent-color);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--primary-color);
 }
 
-.proyectos {
-    background: rgb(8, 10, 23);
-    background: linear-gradient(187deg, rgba(8, 10, 23, 1) 0%, rgba(22, 13, 13, 1) 36%, rgba(23, 14, 14, 1) 86%, rgba(48, 41, 41, 1) 97%, rgba(161, 161, 161, 1) 100%);
-    display: grid;
-    grid-template-columns: 60% 33%;
-    grid-template-rows: 90vh;
-    place-items: center;
-    width:fit-content;
-  height:fit-content;
-
-
+/* Indicadores visuales (Opcional) */
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-.proyectos__box {
-    
-    box-shadow: 1px 1px 15px white;
-    height: 80%;
+.nav-btn {
+    background: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}
+/* Añade esto para asegurar que las cards tengan tamaño */
+.project-card {
+    min-width: 380px; /* El ancho que definimos en el JS */
+    height: auto;
+    padding: 20px;
+    background: #f8f9fa; /* Un color gris claro para que se noten si están ahí */
+    border: 1px solid #ddd;
+    margin: 15px;
+    display: block; /* Aseguramos que sea un bloque */
 }
 
-.proyectos__carousel {
-    grid-row: 1;
-    grid-column: 1 / 2;
-
-    padding: 1rem 1rem 1rem 2rem;
-
-
+.carousel-track {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    transition: transform 0.5s ease;
 }
 
-.proyectos__texto {
-    grid-row: 1;
-    grid-column: 2 / 2;
-    font-size: .9rem;
-    color: #fefefe;
-    font-family: 'Montserrat', sans-serif;
-    padding-left: 1rem;
-}
-.carousel-item{
-    
-    max-height: 350px;
-}
-
-
-h1 {
-    text-shadow: 2px .5px rgba(171, 171, 171, .5);
-}
-
-@media screen and (max-width: 768px) {
-    .container__slider{
-        width: 100%;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 15vh 90vh;
+/* Responsividad para móviles */
+@media (max-width: 768px) {
+    .project-card {
+        min-width: 280px;
+        height: 400px;
     }
-    .menu__slider{
-        grid-row: 1/1;
-        grid-column: 1/1;
-
-    }
-    .slider{
-        grid-row: 2/2;
-        grid-column: 1/1;
-
-
-    }
-    .proyectos {
-        display: grid;
-        grid-template-columns: 95%;
-        grid-template-rows: 2fr 1fr;
-
-    }
-
-    .proyectos__carousel {
-        grid-row: 1 /1;
-        grid-column: 1/ 1;
-
-
-    }
-
-    .proyectos__texto {
-        grid-row: 2 / 2;
-        grid-column: 1 / 1;
-        font-size: .8rem;
-    }
-}
-
-@media screen and (max-width: 600px) {
-    .container__slider {
-        margin-top: 60px;
-    }
-
-
 }
