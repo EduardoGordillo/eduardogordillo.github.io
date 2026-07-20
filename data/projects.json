@@ -6,7 +6,7 @@
       "description": "Sistema inteligente que utiliza algoritmos de filtrado colaborativo y basado en contenido para personalizar sugerencias de entretenimiento según las preferencias del usuario.",
       "methodology": "NLP, Collaborative Filtering, Cosine Similarity",
       "tools": ["Python", "Scikit-Learn", "Pandas"],
-      "image_url": "assets/images/movie_rec.jpg"
+      "image_url": "/img/proyectos/Recomendaciones/Recomendaciones.png"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "description": "Procesamiento de lenguaje natural aplicado a grandes volúmenes de datos de redes sociales para identificar tendencias de opinión y emociones en tiempo real.",
       "methodology": "NLP, NLTK, Text Mining",
       "tools": ["Python", "NLTK", "Tweepy"],
-      "image_url": "assets/images/sentiment.jpg"
+      "image_url": "/img/proyectos/AnalisiSentimiento/AnalisisSentimiento.png"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "description": "Análisis de datos correlacional sobre el impacto de las políticas fiscales y los impuestos a bebidas azucaradas en la tasa de obesidad infantil y adulta.",
       "methodology": "Statistical Analysis, Data Visualization",
       "tools": ["Python", "Matplotlib", "Pandas"],
-      "image_url": "assets/images/sugar_tax.jpg"
+      "image_url": "/img/proyectos/ImpuestoAzucar/ImpuestosAzucar.png"
     }
   ]
 }

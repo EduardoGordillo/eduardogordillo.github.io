@@ -31,8 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = JSON.parse(cleanText.trim());
             console.log("Datos cargados con éxito:", data);
 
-            // --- RENDERIZADO DINÁMICO ---
-            // Limpiamos el track y añadimos las tarjetas del JSON
+     
                         // --- RENDERIZADO DINÁMICO ---
             // Intentamos obtener el arreglo, ya sea que venga directo o dentro de un objeto
             let itemsToRender = [];
@@ -58,10 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     const title = project.title || project.nombre || 'Sin título';
                     const desc = project.description || project.descripcion || '';
                     
+                    const toolsList = project.tools || [];
+                    const badgesHtml = toolsList.map(tool => `<span class="badge">${tool}</span>`).join('');
+
                     card.innerHTML = `
                         <div class="card-content">
+                            <img src="${project.image_url}" alt="${title}" class="project-image">
                             <h3>${title}</h3>
                             <p>${desc}</p>
+                            <div class="badge-container">
+                                ${badgesHtml}
+                            </div>
                         </div>
                     `;
                     track.appendChild(card);

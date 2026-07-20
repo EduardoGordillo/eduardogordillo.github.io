@@ -1,4 +1,4 @@
-/* src/css/projects.css */
+/* src/css/proyectos.css */
 
 :root {
     --primary-color: #2563eb; /* Azul profesional */
@@ -17,7 +17,7 @@
 .projects-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 40px;
+    margin-bottom: 5px;
     color: var(--text-main);
 }
 
@@ -35,10 +35,10 @@
     will-change: transform;
 }
 
-/* Estilo de las Cards */
+/* Estilo de las Cards - Consolidado */
 .project-card {
-    min-width: 350px; /* Tamaño fijo para que el carrusel funcione bien */
-    height: 450px;
+    min-width:500px;
+    height: auto;
     background: var(--bg-card);
     border-radius: 16px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -47,12 +47,32 @@
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid #e5e7eb;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.3s ease;
+    margin: 20px 15px; /* Aumentamos un poco el margen base para dar espacio al crecimiento */
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
+    transform: scale(1.1);
     border-color: var(--primary-color);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 10; /* Asegura que la tarjeta en hover quede por encima de las otras si se solapan */
+}
+
+
+/* Elementos internos de la tarjeta */
+.project-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .project-card h3 {
@@ -68,23 +88,25 @@
 }
 
 /* Sección de Herramientas (Badges) */
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: auto;
-}
-
-.tag {
-    background: var(--accent-color);
+.badge-container .badge {
+    background-color: var(--accent-color) !important; /* Forzamos el color para evitar sobreescrituras */
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--primary-color);
+    color: var(--primary-color) !important; /* Forzamos el color del texto */
+    display: inline-block;
 }
 
-/* Indicadores visuales (Opcional) */
+.badge-container {
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* Indicadores visuales */
 .carousel-nav {
     display: flex;
     justify-content: center;
@@ -101,28 +123,31 @@
     color: white;
     font-weight: bold;
 }
-/* Añade esto para asegurar que las cards tengan tamaño */
-.project-card {
-    min-width: 380px; /* El ancho que definimos en el JS */
-    height: auto;
-    padding: 20px;
-    background: #f8f9fa; /* Un color gris claro para que se noten si están ahí */
-    border: 1px solid #ddd;
-    margin: 15px;
-    display: block; /* Aseguramos que sea un bloque */
-}
 
-.carousel-track {
-    display: flex;
-    padding: 20px;
-    gap: 20px;
-    transition: transform 0.5s ease;
-}
 
-/* Responsividad para móviles */
-@media (max-width: 768px) {
+
+/* Tablets (Portrait y Landscape) */
+@media (min-width: 601px) and (max-width: 1024px) {
     .project-card {
-        min-width: 280px;
-        height: 400px;
+        min-width: 320px; /* Un poco más pequeña que la de PC para ajustarse a tablets */
+        margin: 15px auto;
+    }
+}
+
+/* Móviles (Phones) */
+@media (max-width: 600px) {
+    .carousel-track {
+        padding: 0 20px; /* Espacio de seguridad en los bordes */
+    }
+
+    .project-card {
+        min-width: 100%;      /* Ocupa todo el ancho disponible */
+        margin: 15px 0;       /* Sin márgenes laterales para evitar huecos */
+        padding: 20px;        /* Espacio interno optimizado para pantallas pequeñas */
+    }
+
+    /* En móviles, reducimos el efecto de escala para que no se corte la imagen al agrandar */
+    .project-card:hover {
+        transform: scale(1.05); 
     }
 }
