@@ -1,112 +1,129 @@
-.logo{
-    font-family: 'Mulish', sans-serif;
-    color:#4c4c4c;
-    background: rgb(255,255,255);
-    background: linear-gradient(178deg, rgba(255,255,255,1) 0%, rgba(171,171,171,1) 79%, rgba(22,0,25,1) 94%, rgba(58,43,60,1) 94%);
-    display: flex;
-    height: 60px;
-    width: 100%;    
-    align-items: center;
-    border-bottom: 1px solid 00006b ;
+/* --- Estructura Base y Reset --- */
+.main-site-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95); /* Un toque de transparencia */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque moderno */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.8rem 0;
+    position: sticky; /* El header se queda arriba al hacer scroll */
+    top: 0;
+    z-index: 2000;
+    transition: all 0.3s ease;
 }
-.logo__texto{
-    display: flex; 
-    height: 50px;
-    
-    
-}
-.logo__header{
-    border-radius: 60px;
-    box-shadow:3px 3px 10px #4c4c4c;
-    max-height: 50px;
-}
-.textos__header{
-   
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding-left: 15px;
-    font-size: 13px;
-    width: 125px;
-}
-.texto__nombre{
 
+.header-top {
     display: flex;
-    
-    border-bottom: black;
-    border-bottom: 1.5px solid #EAE6E6;
-    font-size: inherit;
-    font-weight: bold;
-    margin-bottom: 3px;
-    color: #160019;
-    
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    max-width: 1400px;
+    margin: 0 auto;
 }
-.menu{
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
-    width: 80%;
-}
-.menu__items{
-   
-    height: 100%;
+
+/* --- Logo y Branding --- */
+.logo {
     display: flex;
     align-items: center;
-    
+    gap: 12px;
 }
-.menu__item{
-    
-    color: #160019;
-    padding: .5em 1.2rem .5em 1.2rem;
-    border-left: 2px solid #EAE6E6;
-    width: calc(100% / 7);
-    margin-right: 10px;
+
+.logo img {
+    height: 45px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text .name {
+    font-weight: 800;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+    margin: 0;
+}
+
+.logo-text .role {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* --- Navegación Moderna --- */
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-link {
     text-decoration: none;
-    
+    color: #495057;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
-.menu__item:hover{
-    color: #EAE6E6;
 
-}
-.activo{
-    text-decoration: underline;
+/* --- Efectos de Interacción (Hover) --- */
+.nav-link:hover {
+    color: #0d6efd; /* Tu color principal */
+    background-color: rgba(13, 110, 253, 0.08); /* Fondo suave al pasar el mouse */
+    transform: translateY(-2px); /* Sutil elevación */
 }
 
-@media screen and (max-width: 600px){
-    .navbar{
+/* Línea de énfasis debajo del link (Efecto elegante) */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #0d6efd;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
 
-        display: flex;
-        background: rgb(255,255,255);
-        background: linear-gradient(178deg, rgba(255,255,255,1) 0%, rgba(171,171,171,1) 100%);
-        height: 60px;
-    }
-   
-    .logo{
-        display: none;
-    }
-    .logo__header{
-        height: 45px;
-    }
-    
-    
-    
+.nav-link:hover::after {
+    width: 70%;
 }
-@media screen and (min-width: 600px){
-    .navbar{
-        display: none;
+
+/* --- Ajustes para Móviles (Responsivo) --- */
+@media (max-width: 992px) {
+    .header-top {
+        padding: 0 15px;
     }
-    .logo{
-        display: flex;
+
+    .nav-menu {
+        gap: 15px;
     }
-    
-    
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+
+    .logo-text .name {
+        font-size: 1.1rem;
+    }
 }
-@media screen and (min-width: 600px ) and (max-width: 880px){
-    .menu__item{
-        font-size: 15px;
+
+/* --- Animación de entrada suave --- */
+@keyframes fadeInDown {
+    from {
+    opacity: 0;
+    transform: translateY(-10px);
     }
-    .menu__item:nth-child(1) {
-        padding: .5em .5rem .5rem .5rem;
+    to {
+    opacity: 1;
+    transform: translateY(0);
     }
-    
+    }
+
+.main-site-header {
+    animation: fadeInDown 0.6s ease forwards;
 }
