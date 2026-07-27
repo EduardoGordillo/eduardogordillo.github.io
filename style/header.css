@@ -173,11 +173,16 @@ background: radial-gradient(circle,rgba(0, 0, 0, 1) 2%, rgba(246, 231, 214, 1) 4
         transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
         box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        visibility: hidden; /* El menú es "invisible" para el sistema y el mouse mientras esté cerrado */
+        pointer-events: none; /* El usuario no puede interactuar con él (hacer clic en links) si está fuera de pantalla */
+   
     }
 
     /* Cuando el menú está activo (se añade clase .active por JS) */
     .nav-menu.active {
         right: 0 !important; /* Se despliega el menú */
+        visibility: visible; /* El menú "aparece" y se vuelve interactivo */
+        pointer-events: auto; /* Permite hacer clic en los enlaces */
         background: #ffffff;
 background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(227, 230, 255, 1) 98%, rgba(13, 110, 253, 1) 100%);
         
@@ -194,6 +199,10 @@ background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(227, 230, 255
         justify-content: space-between;
         align-items: center;
     }
+    .menu-toggle {
+        display: block !important;
+        z-index: 1001;
+        position: relative;
 }
 
 /* --- Animación de entrada suave --- */
