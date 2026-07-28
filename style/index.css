@@ -1,3 +1,15 @@
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Asegurar que el contenedor principal no genere scroll lateral */
+main, .wrapper, #app { /* Ajusta estas clases según tu estructura real */
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .presentacion {
     background: rgb(8, 10, 23);
     background: linear-gradient(187deg, rgba(8, 10, 23, 1) 0%, rgba(22, 13, 13, 1) 36%, rgba(23, 14, 14, 1) 86%, rgba(48, 41, 41, 1) 97%, rgba(161, 161, 161, 1) 100%);

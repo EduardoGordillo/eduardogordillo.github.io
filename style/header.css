@@ -123,7 +123,10 @@
 }
 
 .nav-menu {
-    transition: right 0.4s ease-in-out;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    /* Eliminamos visibility y pointer-events aquí para evitar conflictos con la clase .active */
 }
 .hamburger:hover {
     transform: scale(1.1); /* Sutil aumento de tamaño */
@@ -154,36 +157,37 @@
     .menu-toggle.active .hamburger {
     animation: pulseActive 1s infinite alternate;
     background: #000000;
-background: radial-gradient(circle,rgba(0, 0, 0, 1) 2%, rgba(246, 231, 214, 1) 4%, rgba(255, 240, 240, 1) 50%, rgba(227, 230, 255, 1) 76%, rgba(33, 237, 255, 1) 93%, rgba(0, 238, 255, 1) 100%);
+    background: radial-gradient(circle,rgba(0, 0, 0, 1) 2%, rgba(246, 231, 214, 1) 4%, rgba(255, 240, 240, 1) 50%, rgba(227, 230, 255, 1) 76%, rgba(33, 237, 255, 1) 93%, rgba(0, 238, 255, 1) 100%);
 }
 
     .nav-menu {
-        /* Convertimos el menú en un panel desplegable */
+        /* Cambiamos de 'fixed' y '100vh' a un estilo que solo cubra su contenido */
         position: fixed;
         top: 0;
-        right: -100%; /* Empieza fuera de la pantalla a la derecha */
-        width: 80%; /* Ocupa el 80% del ancho de la pantalla */
-        height: 100vh;
-        background: rgba(255, 255, 255, 0.98); /* Fondo sólido con un toque de transparencia */
-        backdrop-filter: blur(10px);
+        right: -300px; /* Ajustamos el desfase inicial según el ancho esperado */
+        width: auto;    /* El menú ahora solo ocupa lo que necesiten sus links */
+        height: auto;   /* No ocupa toda la altura de la pantalla */
+        padding: 2rem;  /* Añadimos padding interno para que no esté pegado a los bordes */
+        background: #ffffff;
+        border-radius: 15px; /* Opcional: redondeamos las esquinas para un look más limpio */
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
         transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 999;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-        visibility: hidden; /* El menú es "invisible" para el sistema y el mouse mientras esté cerrado */
-        pointer-events: none; /* El usuario no puede interactuar con él (hacer clic en links) si está fuera de pantalla */
-   
+        box-shadow: -5px 0 20px rgba(0,0,0,0.15);
     }
+
 
     /* Cuando el menú está activo (se añade clase .active por JS) */
     .nav-menu.active {
+        display: flex;
         right: 0 !important; /* Se despliega el menú */
         visibility: visible; /* El menú "aparece" y se vuelve interactivo */
         pointer-events: auto; /* Permite hacer clic en los enlaces */
         background: #ffffff;
+         padding: 5rem;
 background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(227, 230, 255, 1) 98%, rgba(13, 110, 253, 1) 100%);
         
     }
@@ -203,6 +207,7 @@ background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(227, 230, 255
         display: block !important;
         z-index: 1001;
         position: relative;
+        padding: 0.5rem;
 }
 
 /* --- Animación de entrada suave --- */
