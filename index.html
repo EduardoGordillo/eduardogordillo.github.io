@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
+    
     <link rel="stylesheet" href="/style/index.css">
 </head>
 
@@ -26,62 +26,40 @@
     <header>
         <div id="main-header"></div>
     </header>
-    <main>
-        <section class="presentacion">
-            <div class="presentacion__img box">
-                
+  <!-- SECCIÓN HERO CON FOTO -->
+    <section class="hero">
+        <div class="container">
+            <!-- Aquí va tu foto -->
+            <div class="profile-image">
+                <img src="/img/index/profile.png" alt="Eduardo Gordillo">
             </div>
-            <div class="presentacion__bienvenida box">
-                <section class="bienvenida__box">
-                    <div class="bienvenida__titulo flex--center">
-                        <div>¡Comencemos!</div>
-                    </div>
-                    <div class="bienvenida__texto">
-                        Bienvenid@, es un gusto el que te encuentres aquí, <br>
-                        Soy Eduardo Gordillo Desarrollador Web y te invito a que conozcas un poco mas de mi.
+            <h1 class="title-principal">Soluciones que impulsan decisiones.</h1>
+            <p class="subtitle">Desarrollo de software robusto y análisis avanzado de datos para problemas complejos.</p>
+        </div>
+    </section>
 
-                    </div>
-                </section>
+    <!-- SECCIÓN DE PILARES (Las dos grandes columnas) -->
+    <section class="pillars-grid">
+        <div class="pillar-card">
+            <h2 class="title-large">Desarrollo de Software</h2>
+            <p>Creación de aplicaciones web y móviles con arquitectura moderna, garantizando código limpio, escalable y orientado a resultados.</p>
+            <ul class="tech-list">
+                <li>Sistemas robustos</li>
+                <li>Arquitecturas limpias</li>
+                <li>Desarrollo Fullstack</li>
+            </ul>
+        </div>
 
-            </div>
-            <div class="presentacion__svg box"><svg width="105" height="100" viewBox="0 0 128 92">
-                    <defs>
-                        <filter id="f1" x="0" y="0">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="1" />
-                        </filter>
-                    </defs>
-                    <polyline points="10,55 65,5 120,55  " fill="none" stroke-width="24" stroke="#b03a3a" 
-                    stroke-linejoin="round" stroke-linecap="round" filter="url(#f1)" />
-                    <polyline points="20,95 65,50 110,95" fill="none" stroke-width="17" stroke="#4a1c1c"
-                        stroke-linejoin="miter" stroke-linecap="round" filter="url(#f1)" />
-                    <polyline points="30,135 65,95 100,135" fill="none" stroke-width="13" stroke="#4a1c1c"
-                        stroke-linejoin="miter" stroke-linecap="round" filter="url(#f1)" />
-                </svg></div>
-            <div class="presentacion__sobreMi box">
-                <section class="texto__sobreMi">
-                    <div class="descripcion__sobreMi box">
-                        <ul class="list__sobreMi flex--center">
-                            <li class="item__sobreMi box"><i class="fa-regular fa-circle-play"></i> Desarrollador Web con
-                                excelentes habilidades analíticas.</li>
-                            <li class="item__sobreMi box"><i class="fa-regular fa-circle-play"></i>
-                                Gestión de proyectos agiles y de trabajo en equipo obtenidas a
-                                <br> través de años
-                                de trabajo por gusto de aprender y con ganas de crecer.
-                            </li>
-                            <li class="item__sobreMi box"><i class="fa-regular fa-circle-play"></i>
-                                Cada problema que cuan mas sencilla es la solucion mas virtuosa parece ser.
-                            </li>
-                        </ul>
-
-                    </div>
-
-                </section>
-            </div>
-
-        </section>
-
-
-    </main>
+        <div class="pillar-card">
+            <h2 class="title-large">Ciencia de Datos</h2>
+            <p>Inteligencia de datos para identificar patrones, construir modelos predictivos y transformar información en activos estratégicos.</p>
+            <ul class="tech-list">
+                <li>Machine Learning</li>
+                <li>Análisis Predictivo</li>
+                <li>Visualización Avanzada</li>
+            </ul>
+        </div>
+    </section>
     <footer class="text-center text-white" style="background-color: #d0cbcb;">
         
         <div class="container pt-4">

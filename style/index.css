@@ -10,260 +10,181 @@ main, .wrapper, #app { /* Ajusta estas clases según tu estructura real */
     width: 100%;
 }
 
-.presentacion {
-    background: rgb(8, 10, 23);
-    background: linear-gradient(187deg, rgba(8, 10, 23, 1) 0%, rgba(22, 13, 13, 1) 36%, rgba(23, 14, 14, 1) 86%, rgba(48, 41, 41, 1) 97%, rgba(161, 161, 161, 1) 100%);
-    display: grid;
-    grid-template-columns: 28% 70%;
-    grid-template-rows: 52% 48%;
-    height: calc(100vh - 60px);
-    gap: .3rem;
-
-
-
+/* Reset y variables básicas */
+:root {
+    --primary-color: #2c3e50; /* Azul oscuro elegante */
+    --accent-color: #b03a3a;  /* Tu rojo/marrón, pero usado con moderación */
+    --bg-light: #f8fafc;
+    --text-gray: #64748b;
+    --white: #ffffff;
 }
 
-.presentacion__img {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    background: url('../img/index/profile.jpg') center/ cover no-repeat;
-    border-radius: 50%;
-    justify-self: center;
-    align-self: center;
-    height: 70%;
-    width: 60%;
-    box-shadow: -10px -15px 10px rgba(171, 171, 171, .1);
-
-
-}
-.texto__imagen__bienvenida{
-    display: none;
-    color:rgb(8, 10, 23);
+body {
+    margin: 0;
+    background-color: var(--bg-light);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-.presentacion__bienvenida {
-
-    grid-column: 2/2;
-    grid-row: 1/2;
-
-
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
 }
 
-.bienvenida__box {
-    grid-template-columns: 100%;
-    grid-template-rows: 40% 60%;
-    height: calc(100% - 60px);
-    
+/* Hero Section */
+.profile-image {
+    width: 175px; /* Ajusta según tu preferencia */
+    height: 175px;
+    margin: 0 auto 20px;
+    border-radius: 50%; /* Hace la foto circular */
+    padding: 5px;
+    border: 4px solid var(--accent-color); /* Un borde con tu color corporativo */
+    overflow: hidden;
+}
+
+.profile-image img {
     width: 100%;
-}
-
-.bienvenida__titulo {
-
-    display: flex;
-    
-    grid-column: 1;
-    grid-row: 1/2;
-    background: rgb(176, 58, 58);
-    background: radial-gradient(circle, rgba(176, 58, 58, 1) 0%, rgba(74, 28, 28, 0.6171510840664391) 2%, rgba(22, 13, 13, 0.3426412801448705) 20%);
-    color: #fefefe;
-    font-family: 'Montserrat', sans-serif;
-    height: 35%;
-    font-variant: all-petite-caps;
-    font-size: 4.5rem;
-    font-weight: 800;
-    text-shadow: 2px .5px rgba(171, 171, 171, .5);
-    width: 100%;
-
-}
-
-.bienvenida__texto {
-    display: flex;
-    grid-column: 1;
-    grid-row: 2/2;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    height: 65;
-    width: 100%;
-    align-items: flex-end;
-    text-align: end;
-    font-size: 1.5rem;
-    text-shadow: 1px .4px rgba(171, 171, 171, .7);
-
-}
-
-.presentacion__svg {
-    grid-column: 1/2;
-    grid-row: 2/2;
-    align-self: center;
-    justify-self: center;
-    background: rgb(74, 28, 28);
-    background: radial-gradient(circle, rgba(74, 28, 28, 0.6171510840664391) 1%, rgba(176, 58, 58, 1) 3%, rgba(22, 13, 13, 0.3426412801448705) 10%, rgb(114, 39, 39) 45%, rgba(22, 13, 13, 0.3426412801448705) 65%);
-    margin-bottom: 92px;
-}
-
-.presentacion__sobreMi {
     height: 100%;
-    grid-area: 2 / 2 / 3 / 3;
-    width: 100%;
-    color: #fefefe
+    object-fit: cover;
 }
 
-.texto__sobreMi {
-
-    margin-top: 60px;
+/* Ajuste de las Tarjetas de Pilares */
+.pillars-grid {
     display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 50% 25%;
-    width: 100%;
-    height: calc(100% - 150px);
-
-
+    grid-template-columns: 1fr 1fr; /* Divide la pantalla en dos partes iguales */
+    gap: 30px;
+    padding: 50px 0;
 }
 
-.descripcion__sobreMi {
-
-    justify-self: flex-start;
-    align-self: center;
-
-
+.pillar-card {
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 
-.list__sobreMi {
-    background: rgb(23, 14, 14);
-    background: rgb(23, 14, 14);
-    background: linear-gradient(183deg, rgba(23, 14, 14, 1) 7%, rgba(48, 41, 41, 1) 10%, rgba(55, 55, 55, 1) 12%, rgba(8, 10, 23, 1) 13%, rgba(22, 13, 13, 1) 18%, rgba(36, 28, 28, 1) 89%, rgba(54, 54, 54, 1) 90%, rgba(23, 14, 14, 1) 91%, rgba(24, 15, 15, 1) 95%);
-    border-bottom: 1PX #EAE6E6;
-    font-size: 1rem;
-
-
+.title-large {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
 
-.item__sobreMi {
-    margin-right: 2rem;
-    margin-left: 2rem;
-    margin-top: 1rem;
-    font-weight: 200;
-    font-family: 'Montserrat', sans-serif;
-    font-size: larger;
+/* Listas de tecnologías (opcional, para rellenar con contenido útil) */
+.tech-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-.item__texto {
-    border-bottom: 1px dotted rgba(255, 255, 255, .3);
+.tech-list li {
+    background: #f0f4f8;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+    color: var(--text-gray);
 }
 
-.presentacion div:hover{
-    text-shadow: .7px .5px  rgba(255, 255, 255, .8);
+.hero {
+    text-align: center;
+    padding: 80px 0;
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
 }
 
-@media screen and (max-width: 620px) {
-
-    .presentacion {
-        grid-template-columns: 100%;
-        grid-template-rows: 250px 200px 300px 400px;
-        height: 100%;
-
-    }
-
-    .presentacion__img {
-        grid-column: 1 /1;
-        grid-row: 1/2;
-        height: 100%;
-        width: 50%;
-        margin-top: 150px;
-
-    }
-    
-
-
-    .presentacion__bienvenida {
-        grid-column: 1/1;
-        grid-row: 2/4;
-        padding-top: 60px;
-
-
-
-    }
-
-    .bienvenida__box {
-        grid-template-columns: 100%;
-        grid-template-rows: 40% 60%;
-        height: 100%;
-        width: 100%;
-    }
-
-    .bienvenida__titulo {
-        grid-column: 1/1;
-        grid-row: 1/2;
-        font-size: 70px;
-
-        height: 18%;
-        border-bottom: 1px groove #EAE6E6;
-
-
-    }
-
-    .bienvenida__texto {
-
-        grid-column: 1/1;
-        grid-row: 2/2;
-        font-size: 24px;
-        text-align: justify;
-        display: flex;
-        align-items: flex-start;
-        padding: .5em;
-        height: 70%;
-        margin-bottom: 15px;
-
-
-    }
-
-    .presentacion__sobreMi {
-        grid-column: 1/1;
-        grid-row: 4/4;
-        font-size: 22px;
-
-
-    }
-
-    .list__sobreMi {
-        background: rgb(23, 14, 14);
-        background: linear-gradient(183deg, rgba(23, 14, 14, 1) 7%, rgba(48, 41, 41, 1) 10%, rgba(55, 55, 55, 1) 12%, rgba(8, 10, 23, 1) 13%, rgba(22, 13, 13, 1) 18%, rgba(36, 28, 28, 1) 89%, rgba(54, 54, 54, 1) 90%, rgba(23, 14, 14, 1) 91%, rgba(24, 15, 15, 1) 95%);
-    }
-
-    .presentacion__svg {
-        display: none;
-    }
-
-}
-@media screen and (min-width: 980px) {
-    .presentacion__img:hover{
-        -webkit-transform:scale(1.3);
-        transform:scale(1.3);
-    }
+.title-principal {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
 }
 
-@media screen and (min-width: 600px){
-    .navbar {
-        display: none;
-    }
-
-
-
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-@media screen and (min-width: 600px) and (max-width: 920px) {
-   
-    .bienvenida__titulo {
+/* Grid de Capacidades */
+.expertise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 60px;
+}
 
-        font-size: 3rem;
+.card {
+    padding: 40px;
+    background: var(--white);
+    border-radius: 15px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.card h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+/* Secciones de Contenido (Desarrollo y Data) */
+.content-block {
+    padding: 60px;
+    border-radius: 20px;
+    background: var(--white);
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.content-block::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 5px; height: 100%;
+    background: var(--accent-color); /* Una línea lateral de color para dar estilo */
+}
+
+.content-block h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.content-block p {
+    line-height: 1.8;
+    color: var(--text-gray);
+    max-width: 700px;
+}
+
+/* Footer / Social Bar */
+.social-bar {
+    text-align: center;
+    padding: 40px;
+    background: #2c3e50; /* Fondo oscuro para contraste */
+    border-radius: 15px;
+}
+
+.social-bar a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: color 0.3s;
+}
+
+.social-bar a:hover {
+    color: var(--accent-color);
+}
+@media (max-width: 768px) {
+    .pillars-grid {
+        grid-template-columns: 1fr; /* En el móvil, las tarjetas se ponen una debajo de otra */
     }
-
-    .bienvenida__texto {
-
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    
-
 }
