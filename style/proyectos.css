@@ -126,27 +126,33 @@
 
 
 
-/* Tablets (Portrait y Landscape) */
 @media (min-width: 601px) and (max-width: 1024px) {
     .project-card {
-        min-width: 320px; /* Un poco más pequeña que la de PC para ajustarse a tablets */
+        min-width: 350px; /* Ajustado para mejor proporción en tablets */
         margin: 15px auto;
+    }
+    .carousel-track {
+        gap: 20px; /* Reducimos el gap ligeramente en tablets */
     }
 }
 
 /* Móviles (Phones) */
 @media (max-width: 600px) {
+    .carousel-container {
+        padding: 15px 20px; /* Reducimos padding lateral para ganar espacio real */
+    }
+
     .carousel-track {
-        padding: 0 20px; /* Espacio de seguridad en los bordes */
+        gap: 15px; /* REDUCIMOS EL GAP en móvil para que las cards no se desvíen tanto */
+        padding: 0;
     }
 
     .project-card {
-        min-width: 100%;      /* Ocupa todo el ancho disponible */
-        margin: 15px 0;       /* Sin márgenes laterales para evitar huecos */
-        padding: 20px;        /* Espacio interno optimizado para pantallas pequeñas */
+        min-width: 85%;     /* CAMBIO CLAVE: No usar 100% permite ver una "pizca" de la siguiente card y da aire a la actual */
+        margin: 15px auto;  /* Centramos y damos espacio vertical */
+        padding: 20px;       /* Espacio interno balanceado */
     }
 
-    /* En móviles, reducimos el efecto de escala para que no se corte la imagen al agrandar */
     .project-card:hover {
         transform: scale(1.05); 
     }

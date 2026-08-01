@@ -84,17 +84,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- LÓGICA DE INTERACCIÓN DEL CARRUSEL ---
     function initCarouselControls() {
-        const cards = document.querySelectorAll('.project-card');
-        const totalCards = cards.length;
-        const nextBtn = document.getElementById('next-btn');
-        const prevBtn = document.getElementById('prev-btn');
+    const cards = document.querySelectorAll('.project-card');
+    const totalCards = cards.length;
+    const nextBtn = document.getElementById('next-btn');
+    const prevBtn = document.getElementById('prev-btn');
 
-        // Función para mover el track
-        function updateCarousel() {
-            if (track) {
-                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-            }
+    // CALCULÓ DINÁMICO: Obtiene el ancho real de la tarjeta + el gap del CSS
+    const firstCard = document.querySelector('.project-card');
+    const style = window.getComputedStyle(firstCard);
+    const cardWidth = parseFloat(style.width.replace('px', '')) + parseFloat(style.marginRight_or_gap_value_from_css || 0);
+    // O de forma más simple y compatible:
+    const dynamicCardWidth = firstCard ? firstCard.offsetWidth + (parseInt(style.columnGap) || 0) : 380;
+
+    function updateCarousel() {
+        if (track) {
+            // Usamos el ancho dinámico para que el salto sea exacto
+            track.style.transform = `translateX(-${currentIndex * dynamicCardWidth}px)`;
         }
+    }
 
         // Botón Siguiente
         if (nextBtn) {
