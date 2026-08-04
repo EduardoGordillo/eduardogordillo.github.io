@@ -1,4 +1,85 @@
-.btn:hover{
-    -webkit-transform:scale(1.8);
-    transform:scale(1.8);
+/* footer.css */
+:root {
+    --footer-bg: #ffffff; /* Cambia el color si prefieres fondo oscuro */
+    --footer-text: #333333;
+    --accent-color: #007bff; /* Color para los iconos sociales */
+}
+
+.main-footer {
+    background-color: var(--footer-bg);
+    padding: 40px 20px;
+    border-top: 1px solid #e0e0e0;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-info p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: var(--footer-text);
+}
+
+.footer-info p:first-child {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-socials a {
+    color: var(--accent-color);
+    font-size: 20px;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-socials a:hover {
+    transform: translateY(-3px);
+    color: #0056b3;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets y PCs medianos */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-info {
+        align-items: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+}
+
+/* Ajustes para móviles pequeños */
+@media (max-width: 480px) {
+    .main-footer {
+        padding: 30px 15px;
+    }
+    
+    .footer-info p {
+        font-size: 13px;
+    }
 }

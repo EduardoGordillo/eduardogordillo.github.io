@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const data = JSON.parse(cleanText.trim());
-            console.log("Datos cargados con éxito:", data);
+            //console.log("Datos cargados con éxito:", data);
 
      
                         // --- RENDERIZADO DINÁMICO ---
