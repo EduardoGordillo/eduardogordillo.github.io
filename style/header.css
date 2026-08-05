@@ -1,14 +1,14 @@
 /* --- Estructura Base y Reset --- */
 .main-site-header {
     width: 100%;
-    background: rgba(255, 255, 255, 0.95); /* Un toque de transparencia */
-    backdrop-filter: blur(10px); /* Efecto de desenfoque moderno */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    background: var(--header-bg);
+    backdrop-filter: blur(var(--header-blur));
+    border-bottom: 1px solid var(--header-border);
     padding: 0.8rem 0;
-    position: sticky; /* El header se queda arriba al hacer scroll */
+    position: sticky;
     top: 0;
     z-index: 2000;
-    transition: all 0.3s ease;
+    transition: var(--transition-standard);
 }
 
 .header-top {
@@ -37,7 +37,8 @@
     font-weight: 800;
     font-size: 1.2rem;
     letter-spacing: -0.5px;
-    color: #1a1a1a;
+    color: var(--text-dark);
+    /* Cambio aquí */
     margin: 0;
 }
 
@@ -45,7 +46,8 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #6c757d;
+    color: var(--text-muted-gray);
+    /* Cambio aquí */
     margin: 0;
 }
 
@@ -59,20 +61,22 @@
 
 .nav-link {
     text-decoration: none;
-    color: #495057;
+    color: var(--nav-link-color);
+    /* Cambio aquí */
     font-weight: 600;
     font-size: 0.95rem;
     padding: 8px 12px;
     border-radius: 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-cubic);
+    /* Cambio aquí */
     position: relative;
 }
 
 /* --- Efectos de Interacción (Hover) --- */
 .nav-link:hover {
-    color: #0d6efd; /* Tu color principal */
-    background-color: rgba(13, 110, 253, 0.08); /* Fondo suave al pasar el mouse */
-    transform: translateY(-2px); /* Sutil elevación */
+    color: var(--primary-color);
+    background-color: var(--nav-link-bg-hover);
+    transform: translateY(-2px);
 }
 
 /* Línea de énfasis debajo del link (Efecto elegante) */
@@ -83,8 +87,9 @@
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: #0d6efd;
-    transition: all 0.3s ease;
+    background-color: var(--nav-link-accent);
+    /* Cambio aquí */
+    transition: var(--transition-standard);
     transform: translateX(-50%);
 }
 
@@ -94,7 +99,8 @@
 
 /* Estilo de las líneas del botón (puedes ajustar el color según tu marca) */
 .menu-toggle {
-    display: none; /* Se mantiene oculto en desktop */
+    display: none;
+    /* Se mantiene oculto en desktop */
     padding: 0;
     margin: 0;
 }
@@ -104,8 +110,8 @@
     width: 30px;
     height: 24px;
     position: relative;
-    background-color: transparent; /* Eliminamos el cuadro negro */
-     transition: all 0.3s ease-in-out;
+    background-color: transparent;
+    transition: var(--transition-standard);
 }
 
 .hamburger span {
@@ -113,7 +119,8 @@
     position: relative;
     height: 3px;
     width: 100%;
-    background-color: #2d3436; /* Color sólido para las líneas sin fondo de caja */
+    background-color: var(--hamburger-line);
+    /* Cambio aquí */
     margin-bottom: 6px;
     border-radius: 2px;
 }
@@ -123,77 +130,77 @@
 }
 
 .nav-menu {
-    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-cubic);
+    /* Cambio aquí */
     z-index: 999;
-    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
-    /* Eliminamos visibility y pointer-events aquí para evitar conflictos con la clase .active */
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
 }
+
 .hamburger:hover {
-    transform: scale(1.1); /* Sutil aumento de tamaño */
+    transform: scale(1.1);
 }
 
 .hamburger:hover span {
-    filter: brightness(1.2); /* Resalta el color del gradiente/líneas al pasar el mouse */
+    filter: brightness(1.2);
 }
 
 /* Ajuste para móviles menores a 992px */
 @media (max-width: 992px) {
- .menu-toggle {
-    display: block !important;
-    position: relative;
-    z-index: 1001;
-    padding: 10px;
-    background: #000000;
-    background: radial-gradient(circle,rgba(0, 0, 0, 1) 3%, rgba(246, 231, 214, 1) 2%, rgba(255, 240, 240, 1) 50%, rgba(227, 230, 255, 1) 76%, rgba(255, 255, 255, 1) 100%);
-    border-radius: 22px;
-    color: #fff;
-    font-size: 24px;
-    text-align: center;
-    transition: all 0.5s ease-in-out;
+    .menu-toggle {
+        display: block !important;
+        position: relative;
+        z-index: 1001;
+        padding: 10px;
+        background: var(--gradient-toggle);
+        /* Cambio aquí */
+        border-radius: 22px;
+        color: #fff;
+        font-size: 24px;
+        text-align: center;
+        transition: all 0.5s ease-in-out;
+        border: none;
+        cursor: pointer;
+    }
 
-    border: none;
-    cursor: pointer;
-  }
     .menu-toggle.active .hamburger {
-    animation: pulseActive 1s infinite alternate;
-    background: #000000;
-    background: radial-gradient(circle,rgba(0, 0, 0, 1) 2%, rgba(246, 231, 214, 1) 4%, rgba(255, 240, 240, 1) 50%, rgba(227, 230, 255, 1) 76%, rgba(33, 237, 255, 1) 93%, rgba(0, 238, 255, 1) 100%);
-}
+        animation: pulseActive 1s infinite alternate;
+        background: var(--gradient-toggle-active);
+        
+        background: radial-gradient(circle, rgba(0, 0, 0, 1) 2%, rgba(246, 231, 214, 1) 4%, rgba(255, 240, 240, 1) 50%, rgba(227, 230, 255, 1) 76%, rgba(33, 237, 255, 1) 93%, rgba(0, 238, 255, 1) 100%);
+    }
 
     .nav-menu {
-        /* Cambiamos de 'fixed' y '100vh' a un estilo que solo cubra su contenido */
         position: fixed;
         top: 0;
-        right: -300px; /* Ajustamos el desfase inicial según el ancho esperado */
-        width: auto;    /* El menú ahora solo ocupa lo que necesiten sus links */
-        height: auto;   /* No ocupa toda la altura de la pantalla */
-        padding: 2rem;  /* Añadimos padding interno para que no esté pegado a los bordes */
-        background: #ffffff;
-        border-radius: 15px; /* Opcional: redondeamos las esquinas para un look más limpio */
+        right: -300px;
+        width: auto;
+        height: auto;
+        padding: 2rem;
+        background: var(--mobile-menu-bg);
+        border-radius: 15px;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 30px;
-        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: var(--transition-cubic);
         z-index: 999;
-        box-shadow: -5px 0 20px rgba(0,0,0,0.15);
+        box-shadow: var(--shadow-header-mobile); /* Cambio aquí */
     }
 
 
     /* Cuando el menú está activo (se añade clase .active por JS) */
-    .nav-menu.active {
+     .nav-menu.active {
         display: flex;
-        right: 0 !important; /* Se despliega el menú */
-        visibility: visible; /* El menú "aparece" y se vuelve interactivo */
-        pointer-events: auto; /* Permite hacer clic en los enlaces */
-        background: #ffffff;
-         padding: 5rem;
-background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(227, 230, 255, 1) 98%, rgba(13, 110, 253, 1) 100%);
-        
+        right: 0 !important;
+        visibility: visible;
+        pointer-events: auto;
+        background: var(--gradient-nav-active); /* Cambio aquí */
+        padding: 5rem;
     }
 
     .nav-link {
-        font-size: 1.5rem; /* Aumenta tamaño para mejor experiencia táctil */
+        font-size: 1.5rem;
+        /* Aumenta tamaño para mejor experiencia táctil */
         padding: 10px 20px;
     }
 
@@ -203,35 +210,39 @@ background: radial-gradient(circle,rgba(255, 255, 255, 1) 0%, rgba(227, 230, 255
         justify-content: space-between;
         align-items: center;
     }
+
     .menu-toggle {
         display: block !important;
         z-index: 1001;
         position: relative;
         padding: 0.5rem;
-}}
+    }
+}
 
 /* --- Animación de entrada suave --- */
 @keyframes fadeInDown {
     from {
-    opacity: 0;
-    transform: translateY(-10px);
+        opacity: 0;
+        transform: translateY(-10px);
     }
+
     to {
-    opacity: 1;
-    transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-    }
+}
 
 @keyframes pulseActive {
     from {
         transform: scale(1);
     }
+
     to {
         transform: scale(1.05);
         filter: brightness(1.3);
     }
 }
+
 .main-site-header {
     animation: fadeInDown 0.6s ease forwards;
 }
-

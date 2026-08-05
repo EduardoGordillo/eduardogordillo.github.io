@@ -1,12 +1,5 @@
 /* src/css/proyectos.css */
 
-:root {
-    --primary-color: #2563eb; /* Azul profesional */
-    --bg-card: #ffffff;
-    --text-main: #1f2937;
-    --text-muted: #6b7280;
-    --accent-color: #f3f4f6;
-}
 
 .projects-section {
     padding: 60px 20px;
