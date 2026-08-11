@@ -1,5 +1,3 @@
-
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +12,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,700&family=Montserrat:ital,wght@0,100;1,600&family=Mulish:wght@300;400;700&family=Rubik:ital,wght@1,600&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/style/contacto.css">    
+    <link rel="stylesheet" href="/style/contacto.css">
     <link rel="stylesheet" href="/style/index.css">
     <link rel="stylesheet" href="/style/components/button.css">
     <link rel="stylesheet" href="/style/components/card.css">
@@ -23,11 +21,13 @@
 </head>
 
 <body>
-   <header> <div id="main-header"></div></header>
+    <header>
+        <div id="main-header"></div>
+    </header>
     <main>
         <section class="contacto">
             <div class="carta__form">
-                <h2 class="card__title  flex flex--center">Contacto</h2>
+                <h2 class="card__title flex flex--center">Contacto</h2>
                 <form action="/screens/registroConcluido.html" class="formulario flex--column">
                     <fieldset>
                         <legend class="form__label">Si necesitas contactarme, ingresa nombre y correo.</legend>
@@ -43,10 +43,10 @@
                             <label class="input-label" for="email">Email</label>
                             <span class="input-message-error">Este campo no es valido</span>
                         </div>
-
                     </fieldset>
                     <fieldset>
-                        <legend class="form__label">Para contactarme a la brevedad posible, indica tu fecha de nacimiento y numero telefonico.</legend>
+                        <legend class="form__label">Para contactarme a la brevedad posible, indica tu fecha de
+                            nacimiento y numero telefonico.</legend>
                         <div class="input-container">
                             <input name="birth" id="birth" class="input" type="date" placeholder="Fecha de nacimento"
                                 required data-tipo="nacimiento">
@@ -55,20 +55,19 @@
                         </div>
                         <div class="input-container">
                             <input name="phoneNumber" id="phoneNumber" class="input" type="text"
-                                placeholder="Número telefónico" pattern="\d{10}" required minlegth="10" maxlength="10"
+                                placeholder="Número telefónico" pattern="\d{10}" required minlength="10" maxlength="10"
                                 data-tipo="numero">
                             <label class="input-label" for="phoneNumber">Número telefónico</label>
                             <span class="input-message-error">Este campo no es valido</span>
                         </div>
                     </fieldset>
-                    <button class="button">Contactame!</a>
+                    <button type="submit" class="button">Contactame!</button>
                 </form>
             </div>
             <div class="carta__gif">
-                <img class="gif-url" src="/img/contacto/slide10_1.gif" alt="" srcset="">
+                <img class="gif-url" src="/img/contacto/slide10_1.gif" alt="Animación de contacto">
             </div>
         </section>
-
     </main>
     <footer></footer>
 
@@ -77,8 +76,8 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
     <script type="module" src="/js/app.js"></script>
-      <script src="/js/header.js"></script>
-      <script src="/js/footer.js"></script>
+    <script src="/js/header.js"></script>
+    <script src="/js/footer.js"></script>
 
 </body>
 

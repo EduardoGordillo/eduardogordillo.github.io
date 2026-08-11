@@ -1,58 +1,97 @@
+/* style/contacto.css */
+
 .contacto {
     display: grid;
-    background: rgb(8, 10, 23);
-    background: linear-gradient(187deg, rgba(8, 10, 23, 1) 0%, rgba(22, 13, 13, 1) 36%, rgba(23, 14, 14, 1) 86%, rgba(48, 41, 41, 1) 97%, rgba(161, 161, 161, 1) 100%);
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 100%;
-    height: calc(100vh - 60px);
-    padding: 1rem;
+    min-height: calc(100vh - 60px);
+    padding: 4rem 2rem;
+    
+    gap: 3rem;
 }
 
+/* 2. La "Tarjeta" del Formulario (Aquí está el cambio principal) */
+/* Queremos que se vea como un objeto físico, no solo texto sobre fondo negro */
 .carta__form {
-
-    grid-row: auto;
-    grid-column: 1/2;
+    grid-column: 1 / 2;
+    background: #7f7fc0; /* FONDO BLANCO TOTAL */
+    padding: 3rem;
+    border-radius: 30px; /* Bordes muy redondeados para estilo moderno */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4); /* Sombra profunda */
+    border: 1px solid rgba(255,255,255,0.1);
     display: flex;
     flex-direction: column;
-
+    justify-content: center;
 }
 
-.carta__gif {
-    grid-row: auto;
-    grid-column: 2/3;
-    background: url(/img/contacto/slide10_1.gif);
-    display: flex;
-    align-self: center;
-    justify-self: center;
-    background-size: contain;
-
-    width: 75;
-    height: 65%;
-
-
+/* Títulos y textos dentro del formulario */
+.carta__form h1 {
+    color: #1a1c2e; /* Color oscuro elegante */
+    font-weight: 800;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.button {
-
-    background-color: #212121;
-    border-radius: 7px;
-    margin-top: .6rem;
-    margin-bottom: .5rem;
-    max-width: 70%;
-    padding: 1.125rem;
-    color: var(--contrast-light-color);
+.carta__form p {
+    color: #6c757d;
     font-size: 1.1rem;
-    font-weight: bold;
-    position: relative;
+    margin-bottom: 2rem;
+}
 
+/* Estilo de los inputs (Eliminando el gris) */
+.carta__form input, 
+.carta__form select {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 12px; /* Bordes redondeados en inputs */
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+/* Cambio de color al hacer clic (Usa tu color de acento/rojo) */
+.carta__form input:focus {
+    border-color: #ff4d4d; /* Cambia esto por tu variable --primary-color si prefieres */
+    background: #fff;
+}
+.carta__gif {
+    grid-column: 2 / 3;
+    width: 100%;
+    height: auto;
+    border-radius: 30px; /* Redondear el contenedor del gif también */
 }
 
 
+/* 3. El Botón (Diseño moderno y redondeado) */
+.button {
+    background-color: #1a1c2e; /* O usa var(--primary-color) para que sea rojo/oscuro sólido */
+    color: white;
+    padding: 1.2rem 3rem;
+    border-radius: 50px; /* Forma de píldora */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
 
+.button:hover {
+    transform: translateY(-3px); /* Pequeño salto hacia arriba */
+    background-color: #ff4d4d; /* Color de acción al pasar el mouse */
+}
 
+.button:active {
+    transform: translateY(0);
+}
+
+/* Botones secundarios (ajustados a tus variables) */
 .simple-button {
     border: none;
-    background-color: unset;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
 }
 
 .simple-button--add {
@@ -66,11 +105,8 @@
 .simple-button--edit {
     color: var(--success-color);
 }
-.button:hover{
-    background-color: #a90202;
-}
 
-
+/* Animación opcional para elementos que necesiten brillo */
 @keyframes glowing {
   0% {
       background-position: 0 0;
@@ -83,34 +119,32 @@
   }
 }
 
-
-@media screen and (max-width: 600px) {
-    .contacto {
-        margin-top: 60px;
-    }
-
-
-}
-
+/* Media Queries mejoradas */
 @media screen and (max-width: 800px) {
     .contacto {
-        grid-template-rows: 1fr;
         grid-template-columns: 1fr;
-
-
-
+        padding: 2rem;
     }
 
     .carta__form {
         grid-area: 1/1;
         width: 100%;
-        height: calc(100% - 60px);
-
-
-
+        height: auto;
+        min-height: calc(100% - 120px);
     }
 
     .carta__gif {
         display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contacto {
+        margin-top: 60px;
+        padding: 1rem;
+    }
+    
+    .button {
+        max-width: 100%;
     }
 }
