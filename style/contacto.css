@@ -13,7 +13,7 @@
 /* Queremos que se vea como un objeto físico, no solo texto sobre fondo negro */
 .carta__form {
     grid-column: 1 / 2;
-    background: #7f7fc0; /* FONDO BLANCO TOTAL */
+    background: #ffffff; /* FONDO BLANCO TOTAL */
     padding: 3rem;
     border-radius: 30px; /* Bordes muy redondeados para estilo moderno */
     box-shadow: 0 20px 50px rgba(0,0,0,0.4); /* Sombra profunda */

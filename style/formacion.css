@@ -1,36 +1,125 @@
-.formacion{
-    background: rgb(8, 10, 23);
-    background: linear-gradient(187deg, rgba(8, 10, 23, 1) 0%, rgba(22, 13, 13, 1) 36%, rgba(23, 14, 14, 1) 86%, rgba(48, 41, 41, 1) 97%, rgba(161, 161, 161, 1) 100%);
-    height: calc(100% - 60px);
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-    
+/* --- Estilos para el Nodo de la línea de tiempo --- */
+.evolution-subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 60px;
+    font-size: 1.1rem;
 }
-.card{
-    background: rgb(8,10,23);
-    background: linear-gradient(0deg, rgba(8,10,23,1) 0%, rgba(14,14,14,1) 1%, rgba(16,13,14,1) 92%, rgba(52,4,11,1) 100%);
-    margin-top: 10px;
-    margin-bottom: 12px;
-    width: 21rem;
-    height: 23.5rem!important;
-    font-size:small;
-    box-shadow: -.5px .5px 2px #fefefe;
-    color:  #a09d9d;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 100;
-    text-shadow: .1px .4px .5px #fefefe;
+.section-title {
+    padding: 10px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
 
+    text-align: center;
+    margin-bottom: 20px;
 }
-.card-img-top{
-    margin-top: 3px;
-    width: 90%!important;
-    height: 50%;
-    align-self: center;
-    border-bottom: .5px groove #fefefe;
+.node-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--accent-color);
+    border-radius: var(--shape-circle);
     
+    /* Centrado absoluto de contenido */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    position: relative;
+    z-index: 3;
+    border: 4px solid var(--white);
+    box-shadow: var(--shadow-soft);
+    
+    /* Asegura que el círculo no se deforme */
+    flex-shrink: 0; 
 }
-.card-img-top:hover{
-    -webkit-transform:scale(1.1);
-        transform:scale(1.1);
+
+/* Contenedor del icono (la etiqueta <i>) */
+.icon-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 10px; /* Espacio interno para que la imagen no toque el borde del círculo */
+    box-sizing: border-box;
+}
+
+/* Estilo para la imagen dentro del círculo */
+.icon-form img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* Asegura que la imagen mantenga su proporción sin recortarse */
+    display: block;
+}
+
+/* --- Resto del código mantenido con variables --- */
+
+.evolution-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--spacing-xl) 0;
+}
+
+.center-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--border-color);
+    z-index: 1;
+}
+
+.evolution-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    z-index: 2;
+}
+
+.content-box {
+    width: 40%;
+    padding: var(--spacing-md);
+}
+
+.left-side { 
+    text-align: right; 
+}
+
+.right-side { 
+    text-align: left; 
+}
+
+.period-badge {
+    background-color: var(--accent-color);
+    color: var(--white);
+    padding: 6px 14px;
+    font-weight: bold;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 10px;
+    border-radius: var(--border-radius-md);
+}
+
+.main-title {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: 800;
+    color: var(--text-main);
+}
+
+.detail-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.detail-list li {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.4;
 }

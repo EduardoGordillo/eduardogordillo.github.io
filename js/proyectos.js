@@ -1,8 +1,4 @@
 
-/**
- * Archivo: js/proyectos.js
- * Descripción: Carga proyectos, genera las tarjetas dinámicamente y configura el carrusel interactivo.
- */
 
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector('.carousel-track');

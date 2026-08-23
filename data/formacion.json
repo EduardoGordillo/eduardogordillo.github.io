@@ -1,0 +1,70 @@
+{
+  "evolution_data": [
+    {
+      "period": "PRIMEROS AÑOS",
+      "title": "El origen de mi curiosidad",
+      "icon": "/icons/formacion/Hito1.webp",
+      "side": "left",
+      "details": [
+        "Aprendizaje práctico en un taller",
+        "Reparación de electrodomésticos",
+        "Curiosidad por entender cómo funcionan las cosas"
+      ]
+    },
+    {
+      "period": "FORMACIÓN TÉCNICA",
+      "title": "De reparar a construir",
+      "icon": "bolt",
+      "side": "right",
+      "details": [
+        "Electrónica y electricidad",
+        "Mantenimiento industrial",
+        "Interés por crear sistemas y soluciones"
+      ]
+    },
+    {
+      "period": "INGENIERÍA",
+      "title": "Una nueva forma de resolver problemas",
+      "icon": "microchip",
+      "side": "left",
+      "details": [
+        "Electrónica y telecomunicaciones",
+        "Matemáticas y fundamentos técnicos",
+        "Metodologías para resolver problemas"
+      ]
+    },
+    {
+      "period": "DESARROLLO WEB",
+      "title": "Aprender a construir",
+      "icon": "code",
+      "side": "right",
+      "details": [
+        "Desarrollo de sistemas web",
+        "Construcción de soluciones robustas",
+        "Tecnología enfocada en generar valor"
+      ]
+    },
+    {
+      "period": "CIENCIA DE DATOS",
+      "title": "Descubrir lo que no es evidente",
+      "icon": "chart",
+      "side": "left",
+      "details": [
+        "Análisis de datos y patrones",
+        "Búsqueda de insights",
+        "Machine Learning"
+      ]
+    },
+    {
+      "period": "ACTUALIDAD",
+      "title": "De los datos a las soluciones",
+      "icon": "cloud",
+      "side": "right",
+      "details": [
+        "Data Science y Machine Learning",
+        "Deep Learning",
+        "AWS y tecnologías de datos"
+      ]
+    }
+  ]
+}
