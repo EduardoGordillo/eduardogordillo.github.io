@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <!-- Centro (Círculo con Icono) -->
                     <div class="node-circle">
-                        <i class="icon-form"><img src="${item.icon}" alt="${item.icon}"></i>
+                       <img src="${item.icon}" alt="${item.icon}">
                     </div>
 
                     <!-- Lado Derecho (Detalles) -->

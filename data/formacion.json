@@ -3,7 +3,7 @@
     {
       "period": "PRIMEROS AÑOS",
       "title": "El origen de mi curiosidad",
-      "icon": "/icons/formacion/Hito1.webp",
+      "icon": "/icons/formacion/Hito1.png",
       "side": "left",
       "details": [
         "Aprendizaje práctico en un taller",
@@ -14,7 +14,7 @@
     {
       "period": "FORMACIÓN TÉCNICA",
       "title": "De reparar a construir",
-      "icon": "bolt",
+      "icon": "/icons/formacion/Tecnica.png",
       "side": "right",
       "details": [
         "Electrónica y electricidad",
@@ -25,7 +25,7 @@
     {
       "period": "INGENIERÍA",
       "title": "Una nueva forma de resolver problemas",
-      "icon": "microchip",
+      "icon": "/icons/formacion/Ingenieria.png",
       "side": "left",
       "details": [
         "Electrónica y telecomunicaciones",
@@ -36,7 +36,7 @@
     {
       "period": "DESARROLLO WEB",
       "title": "Aprender a construir",
-      "icon": "code",
+      "icon": "/icons/formacion/DesarrolloWeb.png",
       "side": "right",
       "details": [
         "Desarrollo de sistemas web",
@@ -47,7 +47,7 @@
     {
       "period": "CIENCIA DE DATOS",
       "title": "Descubrir lo que no es evidente",
-      "icon": "chart",
+      "icon": "/icons/formacion/CienciaDatos.png",
       "side": "left",
       "details": [
         "Análisis de datos y patrones",
