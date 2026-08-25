@@ -14,31 +14,24 @@
     margin-bottom: 20px;
 }
 .node-circle {
-    width: 120px;            /* Ajusta el tamaño total del círculo aquí */
+    width: 120px;
     height: 120px;
-    border: 4px solid #e11d48; /* El borde debe ser consistente en todos */
+    border: 4px solid #e11d48;
     border-radius: 50%;
-    overflow: hidden;       /* ¡IMPORTANTE! Corta cualquier parte de la imagen que se salga del círculo */
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
 }
+
 .node-circle img {
-    
-    object-fit: cover;      /* Mantiene la proporción de la imagen mientras llena el espacio */
-    border-radius: 50%;     /* Asegura la forma circular */
+    width: 110%;
+    height: 110%;
+    object-fit: cover; /* Esto asegura que la imagen llene el círculo sin deformarse */
+    display: block;
 }
 
-.icon-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    padding: 10px; /* Espacio interno para que la imagen no toque el borde del círculo */
-    box-sizing: border-box;
-}
 
 
 
@@ -137,4 +130,54 @@
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.4;
+}
+
+
+
+@media (max-width: 768px) {
+    /* Contenedor principal: Cambiamos de fila a columna */
+    .evolution-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* Ajuste de los cuadros de contenido (Izquierda y Derecha) */
+    .content-box {
+        width: 100%;
+        padding: 10px 20px;
+    }
+
+    /* El primer contenido (Título y Badge) */
+    .evolution-item .content-box:first-child {
+        order: 1;
+    }
+
+    /* El círculo central con la imagen */
+    .node-circle {
+        order: 2;
+        margin: 0;
+    }
+
+    /* El segundo contenido (La lista de detalles) */
+    .evolution-item .content-box:last-child {
+        order: 3;
+        width: 100%;
+    }
+
+    /* Ajustes de la lista de detalles */
+    .detail-list {
+        padding: 0;
+        list-style-position: inside; /* Para que los puntos se vean bien centrados */
+    }
+
+    /* Ajuste de la línea central (si aplica a tu layout) */
+    .timeline-line {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 100%;
+    }
 }

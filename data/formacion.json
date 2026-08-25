@@ -58,7 +58,7 @@
     {
       "period": "ACTUALIDAD",
       "title": "De los datos a las soluciones",
-      "icon": "cloud",
+      "icon": "/icons/formacion/Actualidad.png",
       "side": "right",
       "details": [
         "Data Science y Machine Learning",
